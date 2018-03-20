@@ -1,15 +1,56 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Amita');
+
+
+span.title {font-weight: bold;}
+
+body {
+  background-color: #E6E6FA;
+  color: #4B0082;
+  /* margin: 30px; */
+  font-family: 'Amita', cursive;
+  border: 3px double;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #BA55D3;
+}
+
+h2 {
+  background-color: #BA55D3;
+  margin: 0px;
+  text-indent: 10px;
+  color: white;
+}
+ul li{
+  list-style-type: none;
+  padding: 10px;
+  padding-left: 5px;
+}
+
+h4 {
+padding-left: 35px;}
+
+p {
+  padding-top: 10px;
+  width: 600px;
+  padding: 10px;
+  padding-left: 15px;
+}
