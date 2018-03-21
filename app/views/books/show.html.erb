@@ -1,5 +1,16 @@
-<h2><%= @book[:title] %></h2>
+<h2><%= @book.title %></h2>
 
-<h4>Author: <%= @book[:author]%></h4>
+<h4>Author: <%= @book.author%></h4>
 
-<p><%= @book[:descr] %></p>
+<p><%= @book.description %></p>
+
+<p>
+<ul>
+  <li>
+    <%= link_to "Edit", edit_book_path %>
+  </li>
+  <li>
+    <%= link_to "Delete", book_path(@book.id), method: :delete %>
+  </li>
+</ul>
+</p>

@@ -1,2 +1,28 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h2>Create a new book</h2>
+<form action="/books" method="post">
+
+  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <!-- Fields to be filled by user: -->
+  <br />
+  <label for="title"> Title: </label>
+  <br />
+  <input type="text" name="title" value="" id="title">
+
+  <br />
+  <label for="author"> Author: </label>
+  <br />
+  <input type="text" name="author" id="author">
+
+  <br />
+  <label for="description"> Description: </label>
+  <br />
+  <textarea name="description" id="description">  </textarea>
+  <!-- u can write something inside of it if u want-->
+
+  <!-- button -->
+  <br />
+  <input type="submit" name="submit" value="Create Book">
+
+</form>

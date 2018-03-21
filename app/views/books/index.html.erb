@@ -5,10 +5,9 @@
     <span class="title">
       <!-- <a href="/books/<%= book[:id]%>" -->
       <!-- <%= book[:title] %> -->
-      <%= link_to book[:title], book_path(book[:id], class:'title') %>
-      </a>
+      <%= link_to book.title, book_path(book[:id], class:'title-link') %>
     </span>
-    by <%= book[:author] %>
+    by <%= book.author %>
   </li>
   <% end %>
 </ul>
