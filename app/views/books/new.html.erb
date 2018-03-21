@@ -1,29 +1,53 @@
-<h2>Create a new book</h2>
+
+<%= form_for @book do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br /><br />
+  <!-- This :symbols must match a field on that file active record model object -->
+
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br /><br />
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br /><br />
+
+  <%= f.submit %>
+  <!-- Since it knows this is for our Book object and that it is a POST request it knows it is related to the word 'create', so it will create a button with the sentence 'Create a Book'. You could specify a different string by doing : <%=  f.submit "whatever u want" %> -->
+<% end %>
+
+
+<!-- ________________________________________________________ -->
+
+<!-- <h2>Create a new book</h2>
 <form action="/books" method="post">
 
-  <!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM -->
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<!-- SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM --
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
-  <!-- Fields to be filled by user: -->
-  <br />
-  <label for="title"> Title: </label>
-  <br />
-  <input type="text" name="book[title]" value="" id="title">
+<!-- Fields to be filled by user: --
+<br />
+<label for="title"> Title: </label>
+<br />
+<input type="text" name="book[title]" value="" id="title">
 
-  <br />
-  <label for="author"> Author: </label>
-  <br />
-  <input type="text" name="book[author]" id="author">
-  <!--  puting book[author] will make it come back as a nested hash -->
+<br />
+<label for="author"> Author: </label>
+<br />
+<input type="text" name="book[author]" id="author">
+<!--  puting book[author] will make it come back as a nested hash --
 
-  <br />
-  <label for="description"> Description: </label>
-  <br />
-  <textarea name="book[description]" id="description">  </textarea>
-  <!-- u can write something inside of it if u want-->
+<br />
+<label for="description"> Description: </label>
+<br />
+<textarea name="book[description]" id="description">  </textarea>
+<!-- u can write something inside of it if u want--
 
-  <!-- button -->
-  <br />
-  <input type="submit" name="submit" value="Create Book">
+<!-- button --
+<br />
+<input type="submit" name="submit" value="Create Book">
 
-</form>
+</form> -->

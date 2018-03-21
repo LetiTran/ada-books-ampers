@@ -10,6 +10,9 @@ class BooksController < ApplicationController
   end
 
   def new
+    @book = Book.new
+    # this instanciates a new book and leave all the fields blank
+
   end
 
   def create
