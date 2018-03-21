@@ -12,7 +12,6 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
     # this instanciates a new book and leave all the fields blank
-
   end
 
   def create
@@ -20,7 +19,9 @@ class BooksController < ApplicationController
     @book.title = params[:book][:title]
     @book.author = params[:book][:author]
     @book.description = params[:book][:description]
-    @book.save
+    redirect_to books_path if @book.save
+    # .save returns T or F
+
   end
 
   def edit

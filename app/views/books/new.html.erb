@@ -6,7 +6,6 @@
   <br /><br />
   <!-- This :symbols must match a field on that file active record model object -->
 
-
   <%= f.label :author %>
   <%= f.text_field :author %>
   <br /><br />
@@ -17,10 +16,11 @@
 
   <%= f.submit %>
   <!-- Since it knows this is for our Book object and that it is a POST request it knows it is related to the word 'create', so it will create a button with the sentence 'Create a Book'. You could specify a different string by doing : <%=  f.submit "whatever u want" %> -->
+
 <% end %>
 
 
-<!-- ________________________________________________________ -->
+<!-- ______________Long way of doing same thing:_________________ -->
 
 <!-- <h2>Create a new book</h2>
 <form action="/books" method="post">
