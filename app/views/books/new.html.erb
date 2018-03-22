@@ -1,4 +1,7 @@
 
+<h2>Create a new book:</h2>
+<br /><br />
+
 <%= form_for @book do |f| %>
 
   <%= f.label :title %>
@@ -15,7 +18,7 @@
   <br /><br />
 
   <%= f.submit %>
-  <!-- Since it knows this is for our Book object and that it is a POST request it knows it is related to the word 'create', so it will create a button with the sentence 'Create a Book'. You could specify a different string by doing : <%=  f.submit "whatever u want" %> -->
+<!-- Since it knows this is for our Book object and that it is a POST request it knows it is related to the word 'create', so it will create a button with the sentence 'Create a Book'. You could specify a different string by doing : <%=  f.submit "whatever u want" %> -->
 
 <% end %>
 
