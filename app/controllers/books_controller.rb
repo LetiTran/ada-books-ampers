@@ -34,12 +34,13 @@ class BooksController < ApplicationController
   # DELETE the create.html.erb file! because it is no longer rendering its own view because it is redirecting to a different action.... so, you dont need it anymore!
 
   def edit
-    Book.find_by(id: params[:id]) ? @book = Book.find_by(id: params[:id]) : new
+    Book.find_by(id: params[:id]) ? (@book = Book.find_by(id: params[:id])) : (redirect_to books_path)
+    # send user to a home page form if book does not exist
   end
 
   def update
     book = Book.find_by(id: params[:id])
-    if !@book.nil?
+    if !book.nil?
       #need to check both editi and update for the existency of the book because there are ways of editing a form without using the broweser.
       book.update(title: params[:book][:title], author: params[:book][:author], description: params[:book][:description] ) ? (redirect_to book_path) : (render :edit)
     end
@@ -48,7 +49,10 @@ class BooksController < ApplicationController
   def destroy
     id = params[:id]
     @book = Book.find(id)
-    @book.destroy
+    if @book
+      @book.destroy
+    end
+    redirect_to books_path
   end
 
 

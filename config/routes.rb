@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+root 'books#index'
+# root_path exists
+
   get '/books/new', to: 'books#new', as: 'new_book'
   # get 'books/search/'
   get '/books/:id', to: 'books#show', as: 'book'
