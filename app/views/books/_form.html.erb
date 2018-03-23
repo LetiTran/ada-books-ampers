@@ -1,0 +1,20 @@
+<h2 class="form-title"> <%= page_title %></h2>
+<br /><br />
+
+<%= form_for @book do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br /><br />
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br /><br />
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br /><br />
+
+  <%= f.submit %>
+
+<% end %>

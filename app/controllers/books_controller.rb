@@ -20,10 +20,14 @@ class BooksController < ApplicationController
   def create
     # does  POST request:
     # This will actually create the new book:
-    book = Book.new
-    book.title = params[:book][:title]
-    book.author = params[:book][:author]
-    book.description = params[:book][:description]
+    # book = Book.new
+    # book.title = params[:book][:title]
+    # book.author = params[:book][:author]
+    # book.description = params[:book][:description]
+
+    #  all this up there could be done by doing this:
+    book = Book.new(book_params)
+
 
     # does a GET request:
     book.save ? (redirect_to books_path) : (render :new)
@@ -41,18 +45,27 @@ class BooksController < ApplicationController
   def update
     book = Book.find_by(id: params[:id])
     if !book.nil?
-      #need to check both editi and update for the existency of the book because there are ways of editing a form without using the broweser.
-      book.update(title: params[:book][:title], author: params[:book][:author], description: params[:book][:description] ) ? (redirect_to book_path) : (render :edit)
+      #need to check both edit it and update for the existency of the book because there are ways of editing a form without using the broweser.
+      # book.update(title: params[:book][:title], author: params[:book][:author], description: params[:book][:description] ) ? (redirect_to book_path) : (render :edit)
+
+      #  all this up there could be done by doing this:
+      book.update(book_params) ? (redirect_to book_path) : (render :edit)
+
     end
   end
 
   def destroy
     id = params[:id]
     @book = Book.find(id)
-    if @book
-      @book.destroy
-    end
-    redirect_to books_path
+    @book ? @book.destroy : (redirect_to books_path)
+  end
+
+  private
+
+  def book_params
+    params.require(:book).permit(:author, :description, :title)
+    # .require --> make sure the book is there
+    # .permit --> allow only what we specify to come trhu.
   end
 
 

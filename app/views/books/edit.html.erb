@@ -1,20 +1,29 @@
-<h2>Edit <%= @book.title %>:</h2>
-  <br /><br />
-  
+
+<!-- Use the _form.html.erb -->
+<%= render partial: "form", locals: {page_title: "Edit #{@book.title}"} %>
+
+
+<!-- ================================================== -->
+<!-- How it was before using Partial vies: -->
+
+
+<!-- <h2>Edit <%= @book.title %>:</h2>
+<br /><br />
+
 <%= form_for @book do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br /><br />
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br /><br />
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <br /><br />
+<%= f.label :author %>
+<%= f.text_field :author %>
+<br /><br />
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <br /><br />
+<%= f.label :description %>
+<%= f.text_area :description %>
+<br /><br />
 
-  <%= f.submit %>
+<%= f.submit %>
 
-<% end %>
+<% end %> -->
