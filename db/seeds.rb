@@ -36,23 +36,23 @@ end
 books_list = [
   {
     title: "Harry Potter",
-    author: Author.find(1),
+    author_id: Author.find(1).id,
     description: "A book"
   },
   {
     title: "Scary",
-    author: Author.find(2),
+    author_id: Author.find(2).id,
     description: "Another book"
   },
   {
     title: "A love story",
-    author: Author.find(3),
+    author_id: Author.find(3).id,
     description: "Another second book"
   },
 ]
 
 books_list.each do |book|
-  worked = Book.create(title: book[:title], author: book[:author], description: book[:description])
+  worked = Book.create(title: book[:title], author_id: book[:author_id], description: book[:description])
   # to make sure it worked:
-  puts "#{book[:title]} has ID: #{worked}, has author: #{book[:author]}"
+  puts "#{book[:title]} has ID: #{worked}, has author with the id: #{book[:author_id]}"
 end
