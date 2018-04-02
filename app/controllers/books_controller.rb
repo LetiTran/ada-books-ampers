@@ -63,7 +63,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:author, :description, :title)
+    params.require(:book).permit(:author_id, :description, :title)
     # .require --> make sure the book is there
     # .permit --> allow only what we specify to come trhu.
   end

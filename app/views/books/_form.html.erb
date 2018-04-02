@@ -1,3 +1,4 @@
+<!-- This is a partial view - works in any view file we want -->
 <h2 class="form-title"> <%= page_title %></h2>
 <br /><br />
 
@@ -8,7 +9,7 @@
   <br /><br />
 
   <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.select :author_id, Author.all.map{|author| [author.name, author.id]} %>
   <br /><br />
 
   <%= f.label :description %>
