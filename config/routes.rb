@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  # patch '/authors/:id/mark_pulitzer', to: 'authors#mark_p'
+
   resources :authors
+
+  resources :books
+
 
   # GET  /books/new
 

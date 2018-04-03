@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 <!-- This is a partial view - works in any view file we want -->
 <h2 class="form-title"> <%= page_title %></h2>
 <br /><br />
 
+=======
+<h2 class="my-class"><%= page_title %></h2>
+<% if @book.errors.any? %>
+  <ul class="errors">
+    <% @book.errors.each do |field, message| %>
+      <li>
+        <strong><%= field.capitalize %>: </strong><%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+>>>>>>> 39c0e4aa5600d15550e90518ea606948004fcba3
 <%= form_for @book do |f| %>
 
   <%= f.label :title %>
