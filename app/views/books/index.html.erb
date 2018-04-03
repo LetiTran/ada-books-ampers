@@ -1,6 +1,5 @@
 <h2>Books List</h2>
 <ul>
-<<<<<<< HEAD
   <% @books.each do |book| %>
   <li>
     <span class="title">
@@ -11,15 +10,4 @@
     by <%= book.author.name %>
   </li>
   <% end %>
-=======
-<% @books.each do |book| %>
-  <li>
-      <span class="title">
-        <%= link_to book.title, book_path(book[:id]),
-        class: 'title-link' %>
-      </span>
-      by <%= book.author.name %>
-  </li>
-<% end %>
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
 </ul>

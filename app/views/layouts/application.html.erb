@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
   <head>
     <title>AdaBooksAmpers</title>
@@ -7,18 +6,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-=======
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
   </head>
 
   <body>
@@ -26,33 +13,14 @@
       <nav>
         <ul>
           <li>
-<<<<<<< HEAD
             <%= link_to "Home", books_path %>
           </li>
           <li>
             <%= link_to "Add a Book", new_book_path %> 
-=======
-            <%= link_to image_tag("http://www.placecage.com/50/50", alt: "Home"), books_path %>
-          </li>
-          <li>
-            <%= link_to "Add a Book", new_book_path %>
-          </li>
-          <li>
-            <%= link_to "Author List", authors_path %>
-          </li>
-          <li>
-            <%= link_to "Add an Author", new_author_path %>
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
           </li>
         </ul>
       </nav>
     </header>
-<<<<<<< HEAD
     <%= yield %>
-=======
-    <main>
-      <%= yield %>
-    </main>
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
   </body>
 </html>

@@ -5,10 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-<<<<<<< HEAD
 
-=======
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use postgresql as the database for Active Record
@@ -23,11 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-<<<<<<< HEAD
 gem 'coffee-rails', '~> 4.2'
-=======
-# gem 'coffee-rails', '~> 4.2'
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -59,21 +52,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-<<<<<<< HEAD
-=======
-
-gem 'jquery-turbolinks'
-gem 'foundation-rails'
-gem 'jquery-rails'
-gem 'awesome_print'
-group :development do
-  gem 'better_errors'
-  gem 'pry-rails'
-  gem 'binding_of_caller'
-end
-
-group :test do
-  gem 'minitest-rails'
-  gem 'minitest-reporters'
-end
->>>>>>> bf56c72c0a0ed62ef3ba191b928b35cdf28cc9b4
