@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-resources :authors
+  resources :authors
+
+  # GET  /books/new
 
 resources :books
 
