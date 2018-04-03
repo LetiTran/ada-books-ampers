@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-resourcers :authors
+resources :authors
 
-resourcers :books
+resources :books
 
 root 'books#index'
 # root_path exists
