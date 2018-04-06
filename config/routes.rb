@@ -11,14 +11,10 @@ Rails.application.routes.draw do
 
   # GET  /books/new
 
-resources :books
+  root 'books#index'
+  # root_path exists
 
-root 'books#index'
-# root_path exists
-
-# mark book as read:
-# patch 'book/:id/read', to: 'books#'
-
+  # # patch '/books/pinecone/:bannana', to: 'books#read'
   # get '/books/new', to: 'books#new', as: 'new_book'
   # # get 'books/search/'
   # get '/books/:id', to: 'books#show', as: 'book'
@@ -27,8 +23,6 @@ root 'books#index'
   # get '/books/:id/edit', to: 'books#edit', as: 'edit_book'
   # patch '/books/:id', to: 'books#update'
   # delete '/books/:id', to: 'books#destroy'
-  # # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-
-# as: the name u want the path to have

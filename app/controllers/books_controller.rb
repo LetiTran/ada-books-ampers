@@ -1,7 +1,16 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    # @books = Book.all
+    # If we are in a nested route (/authors/7/books), we don't want @books to be Book.all, we want @books to just be the author's books
+    if params[:author_id]
+      author = Author.find_by(id: params[:author_id])
+      @books = author.books
+    else
+      # we don't need to find a specific author's books, we just need to list all books
+      @books = Book.all
+
+    end
   end
 
   def show
@@ -30,7 +39,7 @@ class BooksController < ApplicationController
     #  all this up there could be done by doing this:
     book = Book.new(book_params)
 
-  @book.author = Author.find(params[:author_id])
+    @book.author = Author.find(params[:author_id])
 
     # does a GET request:
     book.save ? (redirect_to books_path) : (render :new)
