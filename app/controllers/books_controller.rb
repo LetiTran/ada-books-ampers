@@ -13,6 +13,8 @@ class BooksController < ApplicationController
     # does a GET request:
     @book = Book.new
     # This .new action sends a request to the router to return a form for the new book to the user.
+    @book.author = Author.find(params[:author_id])
+    @action = author_books_path(params[:author_id])
   end
 
   # NEW and CREATE are two DIFFERENT CYCLES. The new method is calling the create method when u hit the submitt button.
@@ -28,6 +30,7 @@ class BooksController < ApplicationController
     #  all this up there could be done by doing this:
     book = Book.new(book_params)
 
+  @book.author = Author.find(params[:author_id])
 
     # does a GET request:
     book.save ? (redirect_to books_path) : (render :new)

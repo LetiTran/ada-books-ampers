@@ -6,4 +6,8 @@
       <%= link_to book.title, book_path(book.id) %>
     </li>
   <% end %>
+  <li>
+    <%= link_to "Create a book", new_author_book_path(@author.id) %>
+  </li>
+
 </ul>
