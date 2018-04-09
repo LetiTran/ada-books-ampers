@@ -1,7 +1,10 @@
 class BooksController < ApplicationController
 
   def index
+<<<<<<< HEAD
     # @books = Book.all
+=======
+>>>>>>> eaee7c399f709fe4ed1bd0834fefec2f5842caab
     # If we are in a nested route (/authors/7/books), we don't want @books to be Book.all, we want @books to just be the author's books
     if params[:author_id]
       author = Author.find_by(id: params[:author_id])
@@ -75,9 +78,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:author_id, :description, :title)
-    # .require --> make sure the book is there
-    # .permit --> allow only what we specify to come trhu.
+    return params.require(:book).permit(:author_id, :description, :title, genre_ids: [])
   end
 
 

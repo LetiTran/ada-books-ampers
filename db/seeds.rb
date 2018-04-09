@@ -51,8 +51,16 @@ books_list = [
   },
 ]
 
-books_list.each do |book|
-  worked = Book.create(title: book[:title], author_id: book[:author_id], description: book[:description])
-  # to make sure it worked:
-  puts "#{book[:title]} has ID: #{worked}, has author with the id: #{book[:author_id]}"
+genres = [{name: "Fantasy"},{name: "Programming"}, {name: "Romance"}, {name: "Teen"}]
+
+genres.each do |genre|
+  genre = Genre.create(genre)
+  puts "#{genre[:name]} has ID: #{genre.id}"
+end
+
+book_list.each do |book|
+  book = Book.create(book)
+  book.genres << Genre.all.sample
+  book.save
+  puts "#{book[:title]} has ID: #{book.id}"
 end

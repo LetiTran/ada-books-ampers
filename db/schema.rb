@@ -30,5 +30,20 @@ ActiveRecord::Schema.define(version: 20180402180057) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "books_genres", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_books_genres_on_book_id"
+    t.index ["genre_id"], name: "index_books_genres_on_genre_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "books", "authors"
 end

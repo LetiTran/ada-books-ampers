@@ -6,6 +6,14 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
+config.generators do |g|
+  g.test_framework :minitest, spec: true
+end
+
+
+
 module AdaBooksAmpers
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
